@@ -62,7 +62,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="607" max="32767" attributes="0"/>
+                  <EmptySpace pref="563" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -86,7 +86,7 @@
               <Color blue="ff" green="66" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/View/Icon/icons8-purchase-order-40.png"/>
+              <Image iconType="3" name="/View.Icon/icons8-purchase-order-40.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="ORDER MASUK"/>
           </Properties>
@@ -105,10 +105,10 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
-                  <Component id="tambah_pel" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                   <Component id="simpan_pel" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="tambah_pel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="jButton2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
@@ -122,13 +122,21 @@
                   <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="tambah_pel" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
-                      <Component id="simpan_pel" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
-                      <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                          <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="46" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="simpan_pel" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
+                              <Component id="tambah_pel" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace pref="54" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -248,7 +256,7 @@
               <Font name="Tahoma" size="11" style="1"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/View/Icon/icons8-plus-30.png"/>
+              <Image iconType="3" name="/View.Icon/icons8-plus-30.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="TAMBAH"/>
           </Properties>
@@ -265,7 +273,7 @@
               <Font name="Tahoma" size="11" style="1"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/View/Icon/icons8-save-30.png"/>
+              <Image iconType="3" name="/View.Icon/icons8-save-30.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="SIMPAN"/>
           </Properties>
@@ -345,7 +353,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="70" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -430,7 +438,7 @@
                   <Font name="Tahoma" size="11" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/View/Icon/icons8-numeric-20.png"/>
+                  <Image iconType="3" name="/View/icons8-numeric-20.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="No Order :"/>
               </Properties>
@@ -456,7 +464,7 @@
                   <Font name="Tahoma" size="11" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/View/Icon/icons8-customer-20.png"/>
+                  <Image iconType="3" name="/View.Icon/icons8-customer-20.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Pelanggan :"/>
               </Properties>
@@ -482,7 +490,7 @@
                   <Font name="Tahoma" size="11" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/View/Icon/icons8-hair-dryer-20.png"/>
+                  <Image iconType="3" name="/View.Icon/icons8-hair-dryer-20.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Jenis Cucian :"/>
               </Properties>
@@ -513,7 +521,7 @@
                   <Font name="Tahoma" size="11" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/View/Icon/icons8-weight-kg-20.png"/>
+                  <Image iconType="3" name="/View.Icon/icons8-weight-kg-20.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Berat :"/>
               </Properties>
@@ -537,7 +545,7 @@
                   <Font name="Tahoma" size="11" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/View/Icon/icons8-information-20.png"/>
+                  <Image iconType="3" name="/View.Icon/icons8-information-20.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Keterangan :"/>
               </Properties>
@@ -563,7 +571,7 @@
                   <Font name="Tahoma" size="11" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/View/Icon/icons8-submit-progress-20.png"/>
+                  <Image iconType="3" name="/View.Icon/icons8-submit-progress-20.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Pengerjaan :"/>
               </Properties>
@@ -590,7 +598,7 @@
                   <Font name="Tahoma" size="11" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/View/Icon/icons8-calendar-27-20.png"/>
+                  <Image iconType="3" name="/View.Icon/icons8-calendar-27-20.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Selesai :"/>
               </Properties>
@@ -606,7 +614,7 @@
                   <Font name="Tahoma" size="11" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/View/Icon/icons8-bill-20.png"/>
+                  <Image iconType="3" name="/View.Icon/icons8-bill-20.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Total :"/>
               </Properties>
@@ -621,6 +629,9 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="total_penActionPerformed"/>
+              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new buttonRounded()"/>
               </AuxValues>
@@ -631,7 +642,7 @@
                   <Font name="Tahoma" size="11" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/View/Icon/icons8-cash-hand-20.png"/>
+                  <Image iconType="3" name="/View.Icon/icons8-cash-hand-20.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Bayar / DP :"/>
               </Properties>
@@ -650,7 +661,7 @@
                   <Font name="Tahoma" size="11" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/View/Icon/icons8-cash-in-hand-20.png"/>
+                  <Image iconType="3" name="/View.Icon/icons8-cash-in-hand-20.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Sisa :"/>
               </Properties>
@@ -678,7 +689,7 @@
                   <Font name="Tahoma" size="11" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/View/Icon/icons8-data-pending-20.png"/>
+                  <Image iconType="3" name="/View.Icon/icons8-data-pending-20.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Status :"/>
               </Properties>
@@ -708,7 +719,7 @@
               <Font name="Tahoma" size="11" style="1"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/View/Icon/icons8-tuttp-30.png"/>
+              <Image iconType="3" name="/View.Icon/icons8-tuttp-30.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="TUTUP"/>
           </Properties>

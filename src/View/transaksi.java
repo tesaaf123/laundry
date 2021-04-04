@@ -171,7 +171,7 @@ public class transaksi extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Microsoft YaHei", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 255, 255));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Icon/icons8-bank-cards-40.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View.Icon/icons8-bank-cards-40.png"))); // NOI18N
         jLabel1.setText("TRANSAKSI");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -181,7 +181,7 @@ public class transaksi extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(44, 44, 44)
                 .addComponent(jLabel1)
-                .addContainerGap(669, Short.MAX_VALUE))
+                .addContainerGap(625, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -197,7 +197,7 @@ public class transaksi extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Icon/icons8-plus-30.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View.Icon/icons8-plus-30.png"))); // NOI18N
         jButton1.setText("TAMBAH");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -207,7 +207,7 @@ public class transaksi extends javax.swing.JFrame {
 
         simpan.setBackground(new java.awt.Color(255, 255, 255));
         simpan.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        simpan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Icon/icons8-save-30.png"))); // NOI18N
+        simpan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View.Icon/icons8-save-30.png"))); // NOI18N
         simpan.setText("SIMPAN");
         simpan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -217,7 +217,7 @@ public class transaksi extends javax.swing.JFrame {
 
         struk.setBackground(new java.awt.Color(255, 255, 255));
         struk.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        struk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Icon/icons8-purchase-order-30.png"))); // NOI18N
+        struk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View.Icon/icons8-purchase-order-30.png"))); // NOI18N
         struk.setText("STRUK");
         struk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -227,7 +227,7 @@ public class transaksi extends javax.swing.JFrame {
 
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Icon/icons8-tuttp-30.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View.Icon/icons8-tuttp-30.png"))); // NOI18N
         jButton2.setText("TUTUP");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -266,7 +266,7 @@ public class transaksi extends javax.swing.JFrame {
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Form Transaksi"));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Icon/icons8-numbers-20.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View.Icon/icons8-numbers-20.png"))); // NOI18N
         jLabel2.setText("No Transaksi :");
 
         no_tran.setBackground(new java.awt.Color(153, 153, 153));
@@ -279,7 +279,7 @@ public class transaksi extends javax.swing.JFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Icon/icons8-numeric-20.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/icons8-numeric-20.png"))); // NOI18N
         jLabel3.setText("No Order :");
 
         no_order.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Pilih Orderan--" }));
@@ -290,7 +290,7 @@ public class transaksi extends javax.swing.JFrame {
         });
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Icon/icons8-customer-20.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View.Icon/icons8-customer-20.png"))); // NOI18N
         jLabel4.setText("Pelanggan :");
 
         form_pel.setEditable(false);
@@ -298,7 +298,7 @@ public class transaksi extends javax.swing.JFrame {
         form_pel.setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Icon/icons8-bill-20.png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View.Icon/icons8-bill-20.png"))); // NOI18N
         jLabel5.setText("Total Bayar :");
 
         form_tbayar.setEditable(false);
@@ -311,7 +311,7 @@ public class transaksi extends javax.swing.JFrame {
         });
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Icon/icons8-paycheque-20.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View.Icon/icons8-paycheque-20.png"))); // NOI18N
         jLabel6.setText("Bayar / DP :");
 
         form_bayar.setEditable(false);
@@ -324,11 +324,11 @@ public class transaksi extends javax.swing.JFrame {
         });
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Icon/icons8-data-pending-20.png"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View.Icon/icons8-data-pending-20.png"))); // NOI18N
         jLabel8.setText("Status :");
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Icon/icons8-cash-in-hand-20.png"))); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View.Icon/icons8-cash-in-hand-20.png"))); // NOI18N
         jLabel9.setText("Sisa :");
 
         form_sisa.setEditable(false);
@@ -372,7 +372,7 @@ public class transaksi extends javax.swing.JFrame {
                             .addComponent(no_tran, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(form_pel, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(no_order, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 352, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 308, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING))))

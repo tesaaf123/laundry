@@ -39,7 +39,7 @@ public class pengguna extends javax.swing.JFrame {
     private void tampil_tabel_peng() {
         try {
                 st = con.createStatement();     
-                ResultSet rs = st.executeQuery ("SELECT * FROM pengguna");
+                ResultSet rs = st.executeQuery ("SELECT * FROM pengguna where hakakses ");
                         ResultSetMetaData rsmd = rs.getMetaData();
                         int columnCount = rsmd.getColumnCount();
                         DefaultTableModel tm = (DefaultTableModel) tabel_peng.getModel();

@@ -473,7 +473,8 @@ public class home_admin extends javax.swing.JFrame {
     }//GEN-LAST:event_transaksi2MenuSelected
 
     private void transaksi2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_transaksi2MousePressed
-        // TODO add your handling code here:
+        this.setVisible(true);
+        new owner().setVisible(true);
     }//GEN-LAST:event_transaksi2MousePressed
 
     private void jPanel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MousePressed
