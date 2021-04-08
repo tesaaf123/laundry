@@ -118,7 +118,6 @@ public class home_owner extends javax.swing.JFrame {
         wel.setText(".");
 
         tanggalnya.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        tanggalnya.setForeground(new java.awt.Color(204, 0, 0));
         tanggalnya.setText("tgl");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -126,7 +125,7 @@ public class home_owner extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(wel)
@@ -150,7 +149,7 @@ public class home_owner extends javax.swing.JFrame {
 
         jMenuBar1.setBackground(new java.awt.Color(204, 204, 204));
 
-        laporan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Icon/iconlaporan2.png"))); // NOI18N
+        laporan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View.Icon/iconlaporan2.png"))); // NOI18N
         laporan.setText("Laporan                                                                             ");
         laporan.setToolTipText("");
         laporan.addMenuListener(new javax.swing.event.MenuListener() {
@@ -169,7 +168,7 @@ public class home_owner extends javax.swing.JFrame {
         });
         jMenuBar1.add(laporan);
 
-        tentang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Icon/icons8-about-50.png"))); // NOI18N
+        tentang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View.Icon/icons8-about-50.png"))); // NOI18N
         tentang.setText("Tentang                                                                                             ");
         tentang.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -178,7 +177,7 @@ public class home_owner extends javax.swing.JFrame {
         });
         jMenuBar1.add(tentang);
 
-        exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Icon/icons8-tuttp-30.png"))); // NOI18N
+        exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View.Icon/icons8-tuttp-30.png"))); // NOI18N
         exit.setText("Keluar");
         exit.addMenuListener(new javax.swing.event.MenuListener() {
             public void menuCanceled(javax.swing.event.MenuEvent evt) {
@@ -211,7 +210,9 @@ public class home_owner extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();

@@ -1,6 +1,6 @@
 package View;
 
-import static View.home_kasir.wel;
+//import static View.home_kasir.wel;
 import java.awt.Desktop;
 import java.awt.GraphicsEnvironment;
 import java.io.File;
@@ -9,16 +9,17 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.HashMap;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import net.sf.jasperreports.engine.JasperCompileManager;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.engine.design.JasperDesign;
-import net.sf.jasperreports.engine.util.JRLoader;
-import net.sf.jasperreports.engine.xml.JRXmlLoader;
-import net.sf.jasperreports.view.JasperViewer;
+//import net.sf.jasperreports.engine.JasperCompileManager;
+//import net.sf.jasperreports.engine.JasperFillManager;
+//import net.sf.jasperreports.engine.JasperPrint;
+//import net.sf.jasperreports.engine.JasperReport;
+//import net.sf.jasperreports.engine.design.JasperDesign;
+//import net.sf.jasperreports.engine.util.JRLoader;
+//import net.sf.jasperreports.engine.xml.JRXmlLoader;
+//import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -452,7 +453,7 @@ public class home_admin extends javax.swing.JFrame {
     private void laporanMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_laporanMousePressed
         if(Desktop.isDesktopSupported()){
             try{
-                Desktop.getDesktop().browse(new URL("http://localhost/LaundrySanhookParadise/laporan.php").toURI());
+                Desktop.getDesktop().browse(new URL("http://localhost/FaragantLaundry/laporan.php").toURI());
             } catch(Exception e){
                 e.printStackTrace();
             }
@@ -473,11 +474,10 @@ public class home_admin extends javax.swing.JFrame {
 
     private void tentangMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tentangMousePressed
         JOptionPane.showMessageDialog(this,
-           "-Andri\n"
-                   + "-Aryandi\n"
-                   + "-Ferdian\n"
-                   + "-Sultan",
-           "Anggota Kelompok",
+           "-Tentang\n"
+                   + "-NetBeans 8.2\n"
+                   + "-DataBase MySql\n",
+           "Tentang",
                 JOptionPane.YES_OPTION);
     }//GEN-LAST:event_tentangMousePressed
 
@@ -506,20 +506,20 @@ public class home_admin extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel1MouseDragged
 
     private void laporanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_laporanActionPerformed
-        try {
-            HashMap parameter = new HashMap();
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection cn = DriverManager.getConnection("jdbc:mysql:" + "///laundry", "root", "");
-            File file = new File("src/view/laundry.jasper");
-            JasperReport jr = (JasperReport) JRLoader.loadObject(file);
-            JasperPrint jp = JasperFillManager.fillReport(jr, parameter, cn);
-            JasperViewer.viewReport(jp, false);
-            JasperViewer.setDefaultLookAndFeelDecorated(true);
-        } catch (Exception e) {
-            javax.swing.JOptionPane.showMessageDialog(null,
-                    "Data tidak Dapat di Cetak!!!"+"\n"+e.getMessage(), "Cetak Data",
-                    javax.swing.JOptionPane.ERROR_MESSAGE);
-        }
+//        try {
+//            HashMap parameter = new HashMap();
+//            Class.forName("com.mysql.jdbc.Driver");
+//            Connection cn = DriverManager.getConnection("jdbc:mysql:" + "///laundry", "root", "");
+//            File file = new File("src/view/laundry.jasper");
+////            JasperReport jr = (JasperReport) JRLoader.loadObject(file);
+////            JasperPrint jp = JasperFillManager.fillReport(jr, parameter, cn);
+////            JasperViewer.viewReport(jp, false);
+////            JasperViewer.setDefaultLookAndFeelDecorated(true);
+//        } catch (Exception e) {
+//            javax.swing.JOptionPane.showMessageDialog(null,
+//                    "Data tidak Dapat di Cetak!!!"+"\n"+e.getMessage(), "Cetak Data",
+//                    javax.swing.JOptionPane.ERROR_MESSAGE);
+//        }
 //                try {
 //            File file = new File("src/view/laundry.jrxml");
 //                    JasperDesign jasperDesign = JRXmlLoader.load(file);

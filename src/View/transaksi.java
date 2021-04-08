@@ -10,8 +10,19 @@ import java.sql.ResultSetMetaData;
 import java.sql.Statement;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import java.io.FileOutputStream;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
+import java.io.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFileChooser;
 
 /**
  *
@@ -518,13 +529,64 @@ public class transaksi extends javax.swing.JFrame {
     }//GEN-LAST:event_simpanActionPerformed
 
     private void strukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_strukActionPerformed
-        if(Desktop.isDesktopSupported()){
-                    try{
-                        Desktop.getDesktop().browse(new URL("http://localhost/LaundrySanhokParadise/struk.php?id="+ no_tran.getText()).toURI());
-                } catch(Exception e){
-                        e.printStackTrace();
-                }
+        String path = "";
+        JFileChooser j = new JFileChooser();
+        j.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        int x = j.showSaveDialog(this);
+        if (x==JFileChooser.APPROVE_OPTION) {
+            path = j.getSelectedFile().getPath();
         }
+        
+        Document doc = new Document();
+        
+        try {
+            PdfWriter.getInstance (doc, new FileOutputStream(path+"struk.pdf"));
+            doc.open();
+            PdfPTable tbl = new PdfPTable(3);
+            
+            tbl.addCell("Pelanggan");
+            tbl.addCell("Bayar");
+            tbl.addCell("Sisa");
+            
+            try {
+                st = con.createStatement();
+                String sql = "SELECT * FROM laundry.penerimaan WHERE no_order='"+selectedItemStr+"'";
+                ResultSet rs = st.executeQuery(sql) ;
+                while(rs.next()) {
+                    Pelanggann = rs.getString (3) ;
+                    Tbayarr = rs.getString (6) ;
+                    Bayarr = rs.getString (7) ;
+                    Statuss = rs.getString (9) ;
+                    Sisaa = rs.getString (8) ;
+                    
+//                    form_pel.setText(Pelanggann) ;
+//                    form_tbayar.setText(Tbayarr) ;
+//                    form_bayar.setText (Bayarr) ;
+//                    form_status.setText (Statuss) ;
+//                    form_sisa.setText (Sisaa) ;
+                    
+                    tbl.addCell (Pelanggann);
+                    tbl.addCell (Tbayarr);
+                    tbl.addCell(Sisaa);
+                    
+                    
+                    
+                }
+                
+                rs.close();
+                st.close ();
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(this, ex, ex.getMessage(), WIDTH, null);
+            }
+            doc.add(tbl);
+                    
+                } catch (FileNotFoundException ex) {
+            Logger.getLogger(transaksi.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (DocumentException ex) {
+            Logger.getLogger(transaksi.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        doc.close();
+            
     }//GEN-LAST:event_strukActionPerformed
 
     private void tabel_tranMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabel_tranMouseClicked

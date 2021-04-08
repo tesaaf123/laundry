@@ -47,11 +47,11 @@ public class home_kasir extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         wel = new javax.swing.JLabel();
         tanggalnya = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -85,11 +85,9 @@ public class home_kasir extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Icon/bgjemuran.jpg"))); // NOI18N
-
         jPanel2.setBackground(new java.awt.Color(102, 102, 255));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Icon/wmiconfix.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View.Icon/wmiconfix.png"))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("MV Boli", 1, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 204, 204));
@@ -97,6 +95,8 @@ public class home_kasir extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel3.setText("Jl.Martadinata No. 83 Bandung");
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Icon/bgjemuran.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -109,26 +109,28 @@ public class home_kasir extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3))
-                .addContainerGap(193, Short.MAX_VALUE))
+                .addContainerGap(197, Short.MAX_VALUE))
+            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel3))
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         wel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         wel.setText(".");
 
         tanggalnya.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        tanggalnya.setForeground(new java.awt.Color(204, 0, 0));
         tanggalnya.setText("tgl");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -136,7 +138,6 @@ public class home_kasir extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(wel)
@@ -151,16 +152,14 @@ public class home_kasir extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(wel)
                     .addComponent(tanggalnya))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(68, 68, 68))
         );
 
         jMenuBar1.setBackground(new java.awt.Color(204, 204, 204));
 
-        pelanggan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Icon/icons8-administrator-male-25.png"))); // NOI18N
+        pelanggan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View.Icon/icons8-administrator-male-25.png"))); // NOI18N
         pelanggan.setText("Pelanggan");
         pelanggan.addMenuListener(new javax.swing.event.MenuListener() {
             public void menuCanceled(javax.swing.event.MenuEvent evt) {
@@ -178,7 +177,7 @@ public class home_kasir extends javax.swing.JFrame {
         });
         jMenuBar1.add(pelanggan);
 
-        jenis_cucian.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Icon/tesot.png"))); // NOI18N
+        jenis_cucian.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View.Icon/tesot.png"))); // NOI18N
         jenis_cucian.setText("Jenis Cucian");
         jenis_cucian.addMenuListener(new javax.swing.event.MenuListener() {
             public void menuCanceled(javax.swing.event.MenuEvent evt) {
@@ -196,7 +195,7 @@ public class home_kasir extends javax.swing.JFrame {
         });
         jMenuBar1.add(jenis_cucian);
 
-        penerimaan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Icon/icons8-reserve-50.png"))); // NOI18N
+        penerimaan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View.Icon/icons8-reserve-50.png"))); // NOI18N
         penerimaan.setText("Order Masuk");
         penerimaan.addMenuListener(new javax.swing.event.MenuListener() {
             public void menuCanceled(javax.swing.event.MenuEvent evt) {
@@ -214,7 +213,7 @@ public class home_kasir extends javax.swing.JFrame {
         });
         jMenuBar1.add(penerimaan);
 
-        transaksi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Icon/icons8-request-money-20.png"))); // NOI18N
+        transaksi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View.Icon/icons8-request-money-20.png"))); // NOI18N
         transaksi.setText("Transaksi");
         transaksi.setContentAreaFilled(false);
         transaksi.addMenuListener(new javax.swing.event.MenuListener() {
@@ -234,7 +233,7 @@ public class home_kasir extends javax.swing.JFrame {
         });
         jMenuBar1.add(transaksi);
 
-        laporan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Icon/iconlaporan2.png"))); // NOI18N
+        laporan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View.Icon/iconlaporan.jpg"))); // NOI18N
         laporan.setText("Laporan");
         laporan.addMenuListener(new javax.swing.event.MenuListener() {
             public void menuCanceled(javax.swing.event.MenuEvent evt) {
@@ -252,7 +251,7 @@ public class home_kasir extends javax.swing.JFrame {
         });
         jMenuBar1.add(laporan);
 
-        tentang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Icon/icons8-about-50.png"))); // NOI18N
+        tentang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View.Icon/icons8-about-50.png"))); // NOI18N
         tentang.setText("Tentang");
         tentang.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -261,7 +260,7 @@ public class home_kasir extends javax.swing.JFrame {
         });
         jMenuBar1.add(tentang);
 
-        exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Icon/icons8-tuttp-30.png"))); // NOI18N
+        exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View.Icon/icons8-tuttp-30.png"))); // NOI18N
         exit.setText("Keluar");
         exit.addMenuListener(new javax.swing.event.MenuListener() {
             public void menuCanceled(javax.swing.event.MenuEvent evt) {
@@ -294,7 +293,9 @@ public class home_kasir extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -360,7 +361,7 @@ public class home_kasir extends javax.swing.JFrame {
     private void laporanMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_laporanMousePressed
         if(Desktop.isDesktopSupported()){
             try{
-                Desktop.getDesktop().browse(new URL("http://localhost/Faragant Laundry/laporan.php").toURI());
+                Desktop.getDesktop().browse(new URL("http://localhost/FaragantLaundry/laporan.php").toURI());
             } catch(Exception e){
                 e.printStackTrace();
             }
@@ -392,11 +393,10 @@ public class home_kasir extends javax.swing.JFrame {
 
     private void tentangMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tentangMousePressed
         JOptionPane.showMessageDialog(this,
-           "-Andri\n"
-                   + "-Aryandi\n"
-                   + "-Ferdian\n"
-                   + "-Sultan",
-           "Anggota Kelompok",
+           "-Tentang\n"
+                   + "-NetBeans 8.2\n"
+                   + "-DataBase MySql\n",
+           "Tentang",
                 JOptionPane.YES_OPTION);
 
     }//GEN-LAST:event_tentangMousePressed
