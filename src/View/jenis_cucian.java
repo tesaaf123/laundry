@@ -37,15 +37,17 @@ public class jenis_cucian extends javax.swing.JFrame {
         
         try {
             st = con.createStatement();
+            
+            
             String sql = "SELECT * FROM jenis_cucian ORDER BY kd_jenis DESC";
-            ResultSet rs = st.executeQuery(sql);
-            if (rs.next()) {
-                int hmmmm = Integer.parseInt(rs.getString("kd_jenis"))+1;
+            ResultSet smk = st.executeQuery(sql);
+            if (smk.next()) {
+                int hmmmm = Integer.parseInt(smk.getString("kd_jenis"))+1;
                 id_jc.setText(Integer.toString(hmmmm));
             } else {
                 id_jc.setText("0001");//sesuaikan dengan variable namenya
             }
-            rs.close();
+            smk.close();
             st.close();
         } catch (Exception e) {
             e.printStackTrace();//penanganan masalah
@@ -86,15 +88,15 @@ public class jenis_cucian extends javax.swing.JFrame {
 
         JOptionPane.showMessageDialog(null, "Data Dihapus dari Database");
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Data Gagal Dihapus " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Data Berhasil Dihapus " + e.getMessage());
             }
         
     }
     
     private void click_data() {
-        String JenisID = tabel_jc.getValueAt(tabel_jc.getSelectedRow(), 0).toString();
-        String JenisJC = tabel_jc.getValueAt(tabel_jc.getSelectedRow(), 1).toString();
-        String HargaJC = tabel_jc.getValueAt(tabel_jc.getSelectedRow(), 2).toString();
+        String JenisID = tabel_jc2.getValueAt(tabel_jc2.getSelectedRow(), 0).toString();
+        String JenisJC = tabel_jc2.getValueAt(tabel_jc2.getSelectedRow(), 1).toString();
+        String HargaJC = tabel_jc2.getValueAt(tabel_jc2.getSelectedRow(), 2).toString();
         
         id_jc.setText(JenisID);
         jenis_jc.setText(JenisJC);
@@ -102,8 +104,9 @@ public class jenis_cucian extends javax.swing.JFrame {
     }
     
     private void ubah_data() {
-        int index = tabel_jc.getSelectedRow();
-        String id = tabel_jc.getValueAt(index, 0).toString();
+        int index = tabel_jc2.getSelectedRow();
+        String id = tabel_jc2.getValueAt(index, 0).toString();
+        
         
         String IDJC = id_jc.getText();
         String JenisJC = jenis_jc.getText();
@@ -112,13 +115,13 @@ public class jenis_cucian extends javax.swing.JFrame {
         try {
 
             st = con.createStatement();
-            String sqlUpdate = "UPDATE jenis_cucian SET kd_jenis='"+IDJC+"',jenis_cucian='"+JenisJC+"',harga='"+HargaJC+"' WHERE kd_jenis='"+id+"' ";
+            String sqlUpdate = "UPDATE jenis_cucian SET kd_jenis='"+IDJC+"',jenis_cucian='"+JenisJC+"',harga='"+HargaJC+"' WHERE kd_jenis='"+id+"'";
             st.executeUpdate(sqlUpdate);
 
         JOptionPane.showMessageDialog(null, "Data Berhasil di Ubah");
         } catch (Exception e) {
 
-            JOptionPane.showMessageDialog(null, "Data Gagal di Ubah " + e.getMessage());
+            JOptionPane.showMessageDialog(null, e.getMessage() + "Data Berhasil di Hapus ");
             }
         }
     
@@ -148,6 +151,7 @@ public class jenis_cucian extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, ex, ex.getMessage(), WIDTH, null);
                 }
        }
+
 
 
     @SuppressWarnings("unchecked")
@@ -224,6 +228,11 @@ public class jenis_cucian extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tabel_jc2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabel_jc2MouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(tabel_jc2);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -497,6 +506,10 @@ public class jenis_cucian extends javax.swing.JFrame {
         int y = evt.getYOnScreen();
         this.setLocation(x-xx,y-xy);
     }//GEN-LAST:event_jPanel1MouseDragged
+
+    private void tabel_jc2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabel_jc2MouseClicked
+        click_data();
+    }//GEN-LAST:event_tabel_jc2MouseClicked
 
     /**
      * @param args the command line arguments

@@ -175,9 +175,7 @@ public class pelanggan extends javax.swing.JFrame {
         String nyari = cari_pel.getText();
         
         try{
-            String sql = "Select * From pelanggan Where id_pelanggan LIKE '"+nyari+"'"
-                            + "OR nama_pelanggan LIKE '"+nyari+"' OR alamat LIKE '"+nyari+"'"
-                            + "OR telp LIKE '"+nyari+"' ORDER BY id_pelanggan";
+            String sql = "Select * From pelanggan Where id_pelanggan LIKE '"+nyari+"' OR nama_pelanggan LIKE '"+nyari+"' OR alamat LIKE '"+nyari+"'OR telp LIKE '"+nyari+"'  OR jeniskelamin LIKE '"+nyari+"'  ORDER BY id_pelanggan";
                 PreparedStatement pst = con.prepareStatement(sql);
                 ResultSet rs = pst.executeQuery(sql);
         while(rs.next()){
@@ -185,8 +183,9 @@ public class pelanggan extends javax.swing.JFrame {
                rs.getString(1),
                rs.getString(2),
                rs.getString(3),
-               rs.getString(4)
-            
+               rs.getString(4),
+               rs.getString(5)
+               
             });
         }
         

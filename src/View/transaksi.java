@@ -1,28 +1,24 @@
 package View;
 
 import XI_RPL4.style.buttonRounded;
-import java.awt.Desktop;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
 import static java.awt.image.ImageObserver.WIDTH;
-import java.net.URL;
+import java.io.*;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.Statement;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import javax.swing.JFileChooser;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-import java.io.FileOutputStream;
-import com.itextpdf.text.Document;
-import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.Paragraph;
-import com.itextpdf.text.pdf.PdfPTable;
-import com.itextpdf.text.pdf.PdfWriter;
-import java.io.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -51,7 +47,7 @@ public class transaksi extends javax.swing.JFrame {
         data.config();
         con = data.con;
         st = data.st;
-        model = (DefaultTableModel)tabel_tran.getModel();
+        model = (DefaultTableModel)tabel_transaksi.getModel();
     }
     
     private void tampil_tabel() {
@@ -60,7 +56,7 @@ public class transaksi extends javax.swing.JFrame {
                 ResultSet rs = st.executeQuery("SELECT no_transaksi,tgl_transaksi,no_order,t_bayar,bayar,t_bayar,sisa,dibayar,kembalian FROM transaksi INNER JOIN penerimaan USING(no_order) ORDER BY no_transaksi ASC");
                 ResultSetMetaData rsmd = rs.getMetaData();
                     int columnCount = rsmd.getColumnCount();
-                DefaultTableModel tm = (DefaultTableModel) tabel_tran.getModel();
+                DefaultTableModel tm = (DefaultTableModel) tabel_transaksi.getModel();
                 tm.setColumnCount(8);
                     for (int i = 10; i <= columnCount; i++ ) {
                     tm.addColumn(rsmd.getColumnName(i));
@@ -133,7 +129,7 @@ public class transaksi extends javax.swing.JFrame {
         form_status = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabel_transaksi = new javax.swing.JTable();
 
         tabel_tran.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -290,7 +286,7 @@ public class transaksi extends javax.swing.JFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/icons8-numeric-20.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Icon/icons8-numeric-20.png"))); // NOI18N
         jLabel3.setText("No Order :");
 
         no_order.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Pilih Orderan--" }));
@@ -435,18 +431,18 @@ public class transaksi extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Tabel Transaksi"));
         jPanel2.setForeground(new java.awt.Color(0, 102, 102));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabel_transaksi.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "No Transaksi", "Tanggal Transaksi", "No Order", "Total Bayar", "Bayar", "Sisa", "Dibayar", "Dibayar"
             }
         ));
-        jScrollPane2.setViewportView(jTable1);
+        jScrollPane2.setViewportView(tabel_transaksi);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -529,63 +525,169 @@ public class transaksi extends javax.swing.JFrame {
     }//GEN-LAST:event_simpanActionPerformed
 
     private void strukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_strukActionPerformed
-        String path = "";
-        JFileChooser j = new JFileChooser();
-        j.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-        int x = j.showSaveDialog(this);
-        if (x==JFileChooser.APPROVE_OPTION) {
-            path = j.getSelectedFile().getPath();
-        }
-        
-        Document doc = new Document();
-        
-        try {
-            PdfWriter.getInstance (doc, new FileOutputStream(path+"struk.pdf"));
-            doc.open();
-            PdfPTable tbl = new PdfPTable(3);
+        try {                                      
+            String path = "";
+            JFileChooser j = new JFileChooser();
+            j.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+            int x = j.showSaveDialog(this);
+            if (x==JFileChooser.APPROVE_OPTION) {
+                path = j.getSelectedFile().getPath();
+            }
             
-            tbl.addCell("Pelanggan");
-            tbl.addCell("Bayar");
-            tbl.addCell("Sisa");
+            Document doc = new Document();
+            String para1 = "Faragant Laundry";
+            Paragraph para = new Paragraph(para1);
+            doc.add(para);
+            try {
+                doc.add(para);
+            } catch (DocumentException ex) {
+                Logger.getLogger(transaksi.class.getName()).log(Level.SEVERE, null, ex);
+            }
             
             try {
-                st = con.createStatement();
-                String sql = "SELECT * FROM laundry.penerimaan WHERE no_order='"+selectedItemStr+"'";
-                ResultSet rs = st.executeQuery(sql) ;
-                while(rs.next()) {
-                    Pelanggann = rs.getString (3) ;
-                    Tbayarr = rs.getString (6) ;
-                    Bayarr = rs.getString (7) ;
-                    Statuss = rs.getString (9) ;
-                    Sisaa = rs.getString (8) ;
-                    
+                PdfWriter.getInstance (doc, new FileOutputStream(path+"struk.pdf"));
+                doc.open();
+                PdfPTable tbl = new PdfPTable(3);
+//            Paragraph para = new Paragraph("Faragant Laundry"+"\n");
+//            para.setAlignment(Element.ALIGN_CENTER);
+//            Paragraph jalan = new Paragraph("Jalan Marta Dinata No. 83 Bandung"+"\n");
+//            para.setAlignment(Element.ALIGN_CENTER);
+//            tbl.addCell("Pelanggan");
+//            tbl.addCell("Bayar");
+//            tbl.addCell("Sisa");
+
+try {
+    st = con.createStatement();
+    String sql = "SELECT * FROM laundry.penerimaan WHERE no_order='"+selectedItemStr+"'";
+    ResultSet rs = st.executeQuery(sql) ;
+    while(rs.next()) {
+        Pelanggann = rs.getString (3) ;
+        Tbayarr = rs.getString (6) ;
+        Bayarr = rs.getString (7) ;
+        Statuss = rs.getString (9) ;
+        Sisaa = rs.getString (8) ;
+        
 //                    form_pel.setText(Pelanggann) ;
 //                    form_tbayar.setText(Tbayarr) ;
 //                    form_bayar.setText (Bayarr) ;
 //                    form_status.setText (Statuss) ;
 //                    form_sisa.setText (Sisaa) ;
-                    
-                    tbl.addCell (Pelanggann);
-                    tbl.addCell (Tbayarr);
-                    tbl.addCell(Sisaa);
-                    
-                    
-                    
-                }
-                
-                rs.close();
-                st.close ();
-            } catch (Exception ex) {
-                JOptionPane.showMessageDialog(this, ex, ex.getMessage(), WIDTH, null);
+
+tbl.addCell ("Pelanggan");
+tbl.addCell (Pelanggann);
+
+
+
+    }
+    
+    rs.close();
+    st.close ();
+} catch (Exception ex) {
+    JOptionPane.showMessageDialog(this, ex, ex.getMessage(), WIDTH, null);
+}
+
+try {
+    st = con.createStatement();
+    String sql = "SELECT * FROM laundry.penerimaan WHERE no_order='"+selectedItemStr+"'";
+    ResultSet rs = st.executeQuery(sql) ;
+    while(rs.next()) {
+        Pelanggann = rs.getString (3) ;
+        Tbayarr = rs.getString (6) ;
+        Bayarr = rs.getString (7) ;
+        Statuss = rs.getString (9) ;
+        Sisaa = rs.getString (8) ;
+        
+//                    form_pel.setText(Pelanggann) ;
+//                    form_tbayar.setText(Tbayarr) ;
+//                    form_bayar.setText (Bayarr) ;
+//                    form_status.setText (Statuss) ;
+//                    form_sisa.setText (Sisaa) ;
+
+tbl.addCell ("Bayar");
+tbl.addCell (Bayarr);
+
+
+
+    }
+    
+    rs.close();
+    st.close ();
+} catch (Exception ex) {
+    JOptionPane.showMessageDialog(this, ex, ex.getMessage(), WIDTH, null);
+}
+try {
+    st = con.createStatement();
+    String sql = "SELECT * FROM laundry.penerimaan WHERE no_order='"+selectedItemStr+"'";
+    ResultSet rs = st.executeQuery(sql) ;
+    while(rs.next()) {
+        Pelanggann = rs.getString (3) ;
+        Tbayarr = rs.getString (6) ;
+        Bayarr = rs.getString (7) ;
+        Statuss = rs.getString (9) ;
+        Sisaa = rs.getString (8) ;
+        
+//                    form_pel.setText(Pelanggann) ;
+//                    form_tbayar.setText(Tbayarr) ;
+//                    form_bayar.setText (Bayarr) ;
+//                    form_status.setText (Statuss) ;
+//                    form_sisa.setText (Sisaa) ;
+
+tbl.addCell ("Total Bayar");
+tbl.addCell (Tbayarr);
+
+
+
+    }
+    
+    rs.close();
+    st.close ();
+} catch (Exception ex) {
+    JOptionPane.showMessageDialog(this, ex, ex.getMessage(), WIDTH, null);
+}
+
+try {
+    st = con.createStatement();
+    String sql = "SELECT * FROM laundry.penerimaan WHERE no_order='"+selectedItemStr+"'";
+    ResultSet rs = st.executeQuery(sql) ;
+    while(rs.next()) {
+        Pelanggann = rs.getString (3) ;
+        Tbayarr = rs.getString (6) ;
+        Bayarr = rs.getString (7) ;
+        Statuss = rs.getString (9) ;
+        Sisaa = rs.getString (8) ;
+        
+//                    form_pel.setText(Pelanggann) ;
+//                    form_tbayar.setText(Tbayarr) ;
+//                    form_bayar.setText (Bayarr) ;
+//                    form_status.setText (Statuss) ;
+//                    form_sisa.setText (Sisaa) ;
+
+tbl.addCell ("Sisa");
+tbl.addCell (Sisaa);
+
+
+
+    }
+    
+    rs.close();
+    st.close ();
+} catch (Exception ex) {
+    JOptionPane.showMessageDialog(this, ex, ex.getMessage(), WIDTH, null);
+}
+//            Paragraph pelanggan = new Paragraph("Peleanggan"+"\n");
+//            para.setAlignment(Element.ALIGN_CENTER);
+doc.add(tbl);
+
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(transaksi.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (DocumentException ex) {
+                Logger.getLogger(transaksi.class.getName()).log(Level.SEVERE, null, ex);
             }
-            doc.add(tbl);
-                    
-                } catch (FileNotFoundException ex) {
-            Logger.getLogger(transaksi.class.getName()).log(Level.SEVERE, null, ex);
+            doc.close();
+            
         } catch (DocumentException ex) {
             Logger.getLogger(transaksi.class.getName()).log(Level.SEVERE, null, ex);
         }
-        doc.close();
             
     }//GEN-LAST:event_strukActionPerformed
 
@@ -739,12 +841,12 @@ public class transaksi extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
     private javax.swing.JComboBox<String> no_order;
     private javax.swing.JTextField no_tran;
     private javax.swing.JButton simpan;
     private javax.swing.JButton struk;
     private javax.swing.JTable tabel_tran;
+    private javax.swing.JTable tabel_transaksi;
     private javax.swing.JLabel tgl_tran;
     // End of variables declaration//GEN-END:variables
 }

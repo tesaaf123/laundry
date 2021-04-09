@@ -252,7 +252,7 @@ public class penerimaan extends javax.swing.JFrame {
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Form Order"));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/icons8-numeric-20.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Icon/icons8-numeric-20.png"))); // NOI18N
         jLabel2.setText("No Order :");
 
         no_pen.setEditable(false);
